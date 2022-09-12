@@ -13,24 +13,24 @@ int main(void)
 	while (p < 58)
 	{
 		while (q < 58)
-		{
-			while (y < 58)
-			{
-				while (x < 58)
-				{
-					putchar(p);
-					putchar(q);
-					putchar(' ');
-					putchar(y);
-					putchar(x);
-					if (!(p == 57 &&
-						q == 56 &&
-						y == 57 &&
-						x == 57))
-					{
-						putchar(',');
-						putchar(' ');
-					}
+	{
+		while (y < 58)
+	{
+		while (x < 58)
+	{
+		putchar(p);
+		putchar(q);
+		putchar(' ');
+		putchar(y);
+		putchar(x);
+		if (!(p == 57 &&
+		q == 56 &&
+		y == 57 &&
+		x == 57))
+	{
+		putchar(',');
+		putchar(' ');
+	}
 					x++;
 				}
 				y++;

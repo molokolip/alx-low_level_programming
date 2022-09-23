@@ -18,16 +18,4 @@ void print_array(int *a, int n);
 char *_strcpy(char *dest, char *src);
 int _atoi(char *str);
 
-#endif /*MAIN_H
-#include "main.h"
-
-/**
-*reset_to_98 - resets the value of given integer to 98
-*@n: parameter
-*Return : nothing
-*/
-
-void reset_to_98(int *n)
-{
-	*n = 98;
-}
+#endi

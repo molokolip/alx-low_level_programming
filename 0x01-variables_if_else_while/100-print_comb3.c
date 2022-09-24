@@ -1,32 +1,36 @@
+/*
+ * File: 100-print_comb3.c
+ * Auth: Pheello Molokoli
+ */
+
 #include <stdio.h>
+
 /**
- * main - program that prints all possible different combinations of 2 digits
- * Return: 0
+ * main - Prints all possible combinations of two different digits,
+ *        in ascending order, separated by a comma followed by a space.
+ *
+ * Return: Always 0.
  */
 int main(void)
 {
-	int c = 0;
-	int f_d;
-	int l_d;
+	int digit1, digit2;
 
-	while (c <= 99)
+	for (digit1 = 0; digit1 < 9; digit1++)
 	{
-		f_d = (c / 10 + '0');
-		l_d = (c % 10 + '0');
-
-		if (f_d < l_d)
+		for (digit2 = digit1 + 1; digit2 < 10; digit2++)
 		{
-			putchar(f_d);
-			putchar(l_d);
+			putchar((digit1 % 10) + '0');
+			putchar((digit2 % 10) + '0');
 
-			if (c != 89)
-			{
-				putchar(',');
-				putchar(' ');
-			}
+			if (digit1 == 8 && digit2 == 9)
+				continue;
+			
+			putchar(',');
+			putchar(' ');
 		}
-		c++;
 	}
-putchar('\n');
-return (0);
+
+	putchar('\n');
+
+	return (0);
 }

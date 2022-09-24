@@ -1,19 +1,26 @@
 #include <stdio.h>
+
 /**
- * main - main function
+ * main - prints all possible comb of single-digit numbers, separated by ,
  *
- * Return: 0
- */
+ * Return: Always 0 (Success)
+**/
+
 int main(void)
 {
-	int i = 0;
+	int i;
 
-	for (i = 10; i < 99; i++)
+	for (i = '0'; i <= '9'; i++)
 	{
 		putchar(i);
-		putchar(',');
+		if (i != '9')
+		{
+			putchar(',');
+			putchar(' ');
+		}
 	}
 
 	putchar('\n');
+
 	return (0);
 }

@@ -1,49 +1,31 @@
 #include "main.h"
 
-
-
 /**
-* alloc_grid - returns a pointer to a
-*2 dimensional array of integers.
-*@width: width oàf array
-*@height: height of array
+* array_range - creates an array of integers
+* @min: smallest number in the array
+* @max: lagrest value in the array
 *
-*Return: pointer to the array
+* Return: pointer to the address of the memory block
 */
 
-int **alloc_grid(int width, int height)
+int *array_range(int min, int max)
 {
-	int **array;
-	int i = 0, j;
+	int *block;
+	int i, j = 0;
 
-	if (width == 0 || height == 0)
+	if (min > max)
 		return (NULL);
-	array = (int **) malloc(sizeof(int *) * height);
-	if (array != NULL)
+	block = malloc(sizeof(*block) * ((max - min) + 1));
+	if (block != NULL)
 	{
-		for (; i < height; i++)
+		for (i = min; i <= max; i++)
 		{
-			array[i] = (int *) malloc(sizeof(int) * width);
-			if (array[i] != NULL)
-			{
-				for (j = 0; j < width; j++)
-					array[i][j] = 0;
-			}
-			else
-			{
-				while (i >= 0)
-				{
-					free(array[i]);
-					i--;
-				}
-				free(array);
-				return (NULL);
-			}
+			block[j] = i;
+			j++;
 		}
-		return (array);
+		return (block);
 	}
 	else
-	{
 		return (NULL);
-	}
+
 }
